@@ -1,64 +1,41 @@
-let buttonSave =document.querySelector('.button1');
-buttonSave.addEventListener('click', createDiv);
 
+let buttonSave=document.querySelector('.main-block-task-button')
+buttonSave.addEventListener('click', addNewTask );
 
-function createDiv() {
-let cont=document.querySelector('.add_task');
-let task = document.querySelector('.input_task').value;
-let newDiv= document.createElement('div');
-let newText= document.createElement('textarea')
-newDiv.className='new_div';
-newText.innerHTML=task;
-cont.append(newDiv);
-newDiv.append(newText);
+function addNewTask(){
+    let mainDiv = document.querySelector('.main-block-new-task');
+    let textNewTask=document.querySelector('.main-block-task-input').value;
+    let newDivTask=document.createElement('div');
+    newDivTask.className='main-block-new-task-create';
+    newDivTask.innerHTML=textNewTask;
+    mainDiv.append(newDivTask);
+    
+    let newDivTaskDelete =document.createElement('span');
+    newDivTaskDelete.className='main-block-new-task-delete';
+    newDivTaskDelete.innerHTML='&#10060';
+    newDivTask.append(newDivTaskDelete);
 
-
-
-let deleteTask = document.createElement('div');
-deleteTask.className='delete_task';
-deleteTask.innerHTML="❎"
-newDiv.append(deleteTask);
-
-
+    
 }
-document.querySelector('body').addEventListener('click', onTask);
 
-function onTask(e){
-if(e.target.classList.contains('delete_task')) {
+document.querySelector('body').addEventListener('click', deleteThisTask);
+
+function deleteThisTask(e){
+if(e.target.classList.contains('main-block-new-task-delete')) {
     e.target.parentNode.remove()
 }
 }
 
 
-
-// калькулятор
-
-
-let value=0
-if (localStorage.getItem('value')) {
-    value=parseInt(localStorage.getItem('value'))
-    updateInput()
+document.querySelector('body').addEventListener('click', wellDoneTask);
+debugger
+function wellDoneTask(e){
+if(e.target.classList.contains('main-block-new-task-create')) {
+    e.target.classList.toggle('line');
 }
-document
-       .querySelector('.min')
-       .addEventListener('click', () =>{
-          console.log('minus fired')
-          value--
-          updateInput()
-});
-
-
-document
-       .querySelector('.plus')
-       .addEventListener('click', () =>{
-          console.log('plus fired')
-          value++
-          updateInput()
-});
-function updateInput(){
-    document.querySelector('.inp').value = value
-    localStorage.setItem('value', value)
 }
+
+
 
 
 
