@@ -1,0 +1,10 @@
+.columns {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.column__title {
+    display: flex;
+    justify-content: space-around;
+}
