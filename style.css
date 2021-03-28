@@ -1,0 +1,85 @@
+.columns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.newColumn{
+    width: 300px;
+    height: 400px;
+    border-radius:10%;
+    border: 3px solid rgb(63, 63, 255);
+    text-align: center;
+}
+.super{
+    width: 400px;
+    height: 200px;
+    border: px solid blue;
+    display: flex;
+    justify-content: space-around;
+}
+.cardUser{
+    border-radius: 10%;
+    border: 5px solid rgb(146, 175, 255);
+    text-align: center;
+}
+
+
+
+/* 
+
+
+
+
+//    _____________________________________________________
+// GET_CARDS_RESPONSE.forEach(function(card) {
+//     // debugger
+//     let optionList = GET_USERS_RESPONSE.map(user => {
+//     return `<option value="${user.id}">${user.name}</option>`;
+// }); // [`<option value="1">viktor</option>`, `<option value="2">vova</option>`];
+// let optionHtml = optionList.join(''); // `<option value="1">viktor</option><option value="2">vova</option>;
+// let cardTpl = `
+//     <div class="card">
+//       <div class="card__title">${card.title}</div>
+//       <div class="card__user">
+//         <select name="" id="" class="card__user-list">${optionHtml}</select>
+//       </div>
+//     </div>
+// `;
+// console.log(typeof (optionHtml))
+
+// let cardElement = document.createElement('div');
+// cardElement.innerHTML = cardTpl;
+// document.querySelector(`[data-column-id="${card.columnId}"]`).append(cardElement);
+// });
+
+
+
+// GET_CARDS_RESPONS.forEach(function(card) {
+//     let cardTpl = `<div>${card.title}</div>`
+//     let cardNew = document.createElement('div');
+//     cardNew.innerHTML = cardTpl;
+//     debugger
+//     document.querySelector(`[data-column-id="${card.columnId}"]`).appendChild(cardNew);
+// });
+// GET_CARDS_RESPONSE.forEach(function(card) {
+//     let user = GET_USERS_RESPONSE.find(function(user) {
+//         return user.id === card.userId;
+//     });
+//     let cardTpl = `
+//       <div class="column__title">${card.title}</div>
+//       <div class="column__cards">${user.name}</div>
+//     `
+//     let cardNew = document.createElement('div');
+//     cardNew.innerHTML = cardTpl;
+//     debugger
+//     document.querySelector(`[data-column-id="${card.columnId}"]`).appendChild(cardNew);
+// });
+
+// GET_USERS_RESPONSE.forEach(function(i) {
+//     let sel = document.createElement('div');
+//     let tor = `<select>
+//     <option>${i.name}</option>
+//     </select>`
+//     sel.innerHTML = tor;
+// document.querySelector('.column__cards').appendChild(sel); */
+
