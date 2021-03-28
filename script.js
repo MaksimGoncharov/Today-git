@@ -53,14 +53,13 @@ const GET_CARDS_RESPONSE = [{
 
 
 
-
 GET_COLUMNS_RESPONSE.forEach(function (column) {
-
+    
     let newColumn = document.createElement('div');
     newColumn.classList = "newColumn"
     let textColumn = `<div id ="a${column.id}">
-   ${column.name}
-   </div>`;
+    ${column.name}
+    </div>`;
     newColumn.innerHTML = textColumn;
     document.querySelector('.columns').append(newColumn);
 });
@@ -86,34 +85,49 @@ GET_CARDS_RESPONSE.forEach(function (card) {
     ${selec.join('')}
 </select>`
     // join помогает нам разделить массив и поместить части массива в разные option
-    let textNewName = `<div>${option}
+    let textNewName = `<div id="${card.userId}">${option}
     
     <p>${card.title}</p><p>${user.name}</p><p>${card.description}</p>
    </div>`;
     cardElement.innerHTML = textNewName;
 
+    let buttonMenu = document.createElement('div')
+    let button =`<button id="todo">TODO</button>
+    <button id="dev">DEV</button>
+    <button id="qa">QA</button>
+    <button id="done">DONE</button>`
+     buttonMenu.innerHTML=button;
 
 
-   
-    document.querySelector(`#a${col.id}`).appendChild(cardElement);
+document.querySelector(`#a${col.id}`).appendChild(cardElement);
+document.querySelector('.cardUser').append(buttonMenu)
 });
 
-document.querySelector('body').addEventListener('input', move)
+
+
+
+document.querySelector('.cardUser').addEventListener('input', move)
 function move(i) {
- let t= i.target.dataset.cardId;
-  document.querySelector(`#a${t}`).remove();
-  
+    this.remove()
 }
- 
 
 
 
 
+//  * добавил айди ячейке которая создается на 89 строке
 
 
 // sup.append(cardElement);
 
 
+
+// const goTODO = document.querySelector("#todo")
+// function goONTODO(u){
+
+// }
+// const goDev = document.querySelector("#dev")
+// const goQa = document.querySelector("#qa")
+// const goDone = document.querySelector("#done")
 
 
 
