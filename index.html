@@ -5,16 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO list</title>
-    <script defer src="./script.js"></script>
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script defer src="./index.js"></script>
 </head>
 <body>
-<div class="columns">
+    <div class="main">
+        <button id="create">+</button>
+        <br>
+        <div class="main-create-task hide">
+            <center><input type="text" placeholder="Type u task..." value="" id="textNewTask"></center>
+            <center><button id="newTask">要</button></center>
+            <button id="Close">✖</button>
+        </div>
+        
+        <img src="./41353123_1902581886463934_1657976041907421184_n.jpg" class="img-me" id="ball" draggable="true">
+        <div class="main-columns">
+            <div class="main-columns-ideas">
+                <h1>Задания</h1>
+               
+                
+            </div>
+            <div class="main-columns-todo" id="on" draggable="true">
+                <h1>Выполняются</h1>
 
-</div>
+                          
+            </div>
+            <!-- <div class="main-columns-doing">
+                <h1>Особый случай</h1>
+                
+            </div> -->
+            <div class="main-columns-done">
+                <h1>Завершенные</h1>
+                
+            </div>
+            
+            
+        </div>
+        
+        
 
+        
+    </div>
+    
 
-
+    <!-- <div id="ball"></div> -->
 </body>
+
 </html>
+<!-- <div id="window">
+    <form class="form">
+        <p>Вы действительно хотите добавить задачу?</p>
+        <button id="Yes">Yes</button>
+        <button id="No">no</button>
+    </form>
+
+</div> -->
+
+<!-- <div class="buttons">
+
+    <button id="goIdeas" class="buttonTask">Ideas</button>
+    <button id="goTodo" class="buttonTask">todo</button>
+    <button id="goDoing" class="buttonTask">doing</button>
+    <button id="goDone" class="buttonTask">done</button>
+    <button id="goOthers" class="buttonTask">Others</button>
+</div> -->

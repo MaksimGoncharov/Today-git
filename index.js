@@ -1,88 +1,101 @@
- 
 
-let elems = document.querySelector('.button_one')
-elems.addEventListener('click', ButtonOne) 
 
-    function ButtonOne(){
-        alert(1)
-        elems.classList.add('none_but');  
+var now = new Date();
+time = `${now.getHours()}:${now.getMinutes()}`
+// переменная по времени
+
+
+var columns = document.querySelector(".main-columns");
+var todo;
+function local() {
+    todos = columns.innerHTML;
+    localStorage.setItem('todos', todos);
+}
+// работа с локальным хранилещем
+
+var buttonNewTask = document.querySelector('#newTask');
+buttonNewTask.addEventListener("click", createNewTask);
+
+var createIdea = document.querySelector('#create')
+createIdea.addEventListener("click", () => {
+    document.querySelector(".main-create-task").classList.toggle('hide');
+});
+var closeModalwindow = document.querySelector('#Close').addEventListener("click", () => {
+    document.querySelector(".main-create-task").classList.toggle('hide');
+})
+// работа с модальным окном, вызываем и отзываем его
+
+function createNewTask() {
+
+    debugger
+    var newContain = document.createElement('div')
+    var textForTask = document.querySelector('#textNewTask').value;
+    newContain.innerHTML = `<div draggable="true"> <h2> ${textForTask}</h2>
+    <p>Создано: ${time}</p><hr></div>`
+    var deleteTask = document.createElement("span")
+    deleteTask.innerHTML = `✖ `;
+    deleteTask.classList = 'delete-button'
+    newContain.className = 'newIdea';
+
+    newContain.appendChild(deleteTask);
+    if (textForTask === "") {
+        alert("Введите задачу!")
     }
-	
-let thing = document.querySelector('.button_two')
-    thing.addEventListener('click', ButTwo) 
-        function ButTwo(){
-            alert(2)
-            thing.classList.add('none_but');  
-        }	
+    else {
+        document.querySelector('.main-columns-ideas').append(newContain);
+        document.querySelector('#textNewTask').value = "";
+        document.querySelector(".main-create-task").classList.toggle('hide')
+    }
+    local()
 
-let allien = document.querySelector('.button_three')
-    allien.addEventListener('click', ButThr) 
-        function ButThr(){
-            alert(3)
-            allien.classList.add('none_but');  
-        }	
-let joe = document.querySelector('.button_four')
-    joe.addEventListener('click', ButFr) 
-        function ButFr(){
-            alert(4)
-            joe.classList.add('none_but');  
-        }	
+};
+columns.addEventListener('click', (i) => {
+    if (i.target.tagName === "SPAN") {
+        var div = i.target.parentNode;
+        div.remove();
+    }
+    else if (i.target.tagName === "P" || i.target.tagName === "H2") {
+        i.target.classList.toggle('throw');
+    }
+    local()
 
-let elvis = document.querySelector('.button_five')
-    elvis.addEventListener('click', ButFV) 
-        function ButFV(){
-            alert(5)
-            elvis.classList.add('none_but');  
-        }	
-let Lenon = document.querySelector('.button_six')
-        Lenon.addEventListener('click', ButS) 
-            function ButS(){
-                alert(6)
-                Lenon.classList.add('none_but');  
-            }	
-let Jack = document.querySelector('.button_seven')
-            Jack.addEventListener('click', ButSev) 
-                function ButSev(){
-                    alert(7)
-                    Jack.classList.add('none_but');  
-                }	           
-let Tsoy = document.querySelector('.button_eight')
-                Tsoy.addEventListener('click', ButEi) 
-                    function ButEi(){
-                        alert(8)
-                        Tsoy.classList.add('none_but');  
-                    }	  
-let mike = document.querySelector('.button_nine')
-                    mike.addEventListener('click', ButNi) 
-                        function ButNi(){
-                            alert(9)
-                            mike.classList.add('none_but');  
-                        }	 
-let all = document.querySelector('.button_ten')
-                        all.addEventListener('click', ButTen) 
-                            function ButTen(){
-                                alert(10)
-                                all.classList.add('none_but');  
-                            }	
+});
+// добавление и взаимодействие с новыми задачами
 
 
-                            
-                            
+if (localStorage.getItem('todos')) {
+    columns.innerHTML = localStorage.getItem('todos')
+}
+// локальным хранилищем
+
+
+
+
+// drag&drop c img
+let element = document.querySelector('.newIdea');
+let parent = document.querySelector('#on');
+
+parent.addEventListener('dragover', function (o) {
+    o.preventDefault();
+});
+
+parent.addEventListener('drop', function (ev) {
+    this.append(element);
+});
 
 
 
 
 
 
+document.querySelector('.img-me').addEventListener("dragover", function (event) {
+event.preventDefault();
+});
 
-
-
-
-
-
-
-
-
+ball.addEventListener('dragend',function(elem) {
+    ball.style.top = elem.pageY + "px";
+    ball.style.left = elem.pageX +"px";
+})
 
 
 

@@ -1,85 +1,211 @@
-.columns{
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-image: url(https://i.pinimg.com/originals/a0/ee/e8/a0eee8049f6b7ee02cb98ebc308d8dd0.jpg);
+    background-size: 100%;
+}
+.img-me{
+position: absolute;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+.img-me:hover{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px rgb(0, 0, 0);
+    }
+
+h1{
+    text-decoration: underline;
+}
+/* .for-form{
+    display: none;
+}
+.form{
+    width: 230px;
+    height: 100px;
+    color: #FFFFFf;
+    position: absolute;
+    top: 70px;
+    left: 480px;
+    background: chocolate;
+} */
+
+.main-columns{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 250px;
+    /* border: 5px solid rgb(180, 180, 180); */
 }
-.newColumn{
-    width: 300px;
-    height: 400px;
-    border-radius:10%;
-    border: 3px solid rgb(63, 63, 255);
+.main-columns-ideas{
+    width: 250px;
+    height: auto;
+    max-height: 600px;
+    border: 1px solid white;
     text-align: center;
-}
-.super{
-    width: 400px;
-    height: 200px;
-    border: px solid blue;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.178);
+    /* overflow: auto; */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  overflow: auto;
 }
-.cardUser{
-    border-radius: 10%;
-    border: 5px solid rgb(146, 175, 255);
+.newIdea{
+    width: 170px;
+    height: auto;
     text-align: center;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    transition: 1s;
+    background: rgb(220, 220, 220);
+    
+}
+.delete-button{
+    margin-left: 120px;
+   
+}
+/* first card */
+.main-columns-todo{
+    overflow: auto;
+    width: 250px;
+    height: auto;
+    border: 5px solid white;
+    text-align: center;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.178);
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-columns-doing{
+    width: 250px;
+    height: auto;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.178);
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+.main-columns-done{
+    width: 250px;
+    height: auto;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.178);
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+.main-columns-others{
+    width: 250px;
+    height: auto;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.178);
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+#ball{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   cursor: pointer;
+}
+.buttonTask{
+    width: 20px;
+    height: 20px;
+   
+    color: white;
+}
+#goIdeas{
+    background: yellow;
+}
+#goOthers{
+    background: violet;
+}
+#goDone{
+    background: yellowgreen;
+}
+#goTodo{
+    background: rgb(130, 234, 238);
+}
+.throw{
+    text-decoration: line-through;
+    color: rgb(122, 0, 0);
+    transition: 2s;
+}
+
+/* // var btnTodo = document.querySelector("#goTodo")
+// btnTodo.addEventListener('click', ()=> {
+//     document.querySelector(".main-columns-ideas").remove(document.querySelector('newIdea'))
+//     document.querySelector(".main-columns-todo").a
+// }) */
+
+
+#create{ float: right;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    background: #dcdcdc;
+    color: #000000;
+    outline: none;
+}
+
+#textNewTask{
+    border: none;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    width: 400PX;
+    height: 90px;
+    background: #ffffff;
+    font-size: 55px;
+}
+#newTask{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #dcdcdc;
+    color: #000000;
+    outline: none;
+}
+#Close{
+    color: #ff0000;
+    outline: none;
+}
+/* все что связано с модальным окном */
+
+.main-create-task{
+    position: absolute;
+    top: 200px;;
+    left: 500px;
+    width: 500px;
+    height: 200px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
 }
 
 
 
-/* 
 
 
-
-
-//    _____________________________________________________
-// GET_CARDS_RESPONSE.forEach(function(card) {
-//     // debugger
-//     let optionList = GET_USERS_RESPONSE.map(user => {
-//     return `<option value="${user.id}">${user.name}</option>`;
-// }); // [`<option value="1">viktor</option>`, `<option value="2">vova</option>`];
-// let optionHtml = optionList.join(''); // `<option value="1">viktor</option><option value="2">vova</option>;
-// let cardTpl = `
-//     <div class="card">
-//       <div class="card__title">${card.title}</div>
-//       <div class="card__user">
-//         <select name="" id="" class="card__user-list">${optionHtml}</select>
-//       </div>
-//     </div>
-// `;
-// console.log(typeof (optionHtml))
-
-// let cardElement = document.createElement('div');
-// cardElement.innerHTML = cardTpl;
-// document.querySelector(`[data-column-id="${card.columnId}"]`).append(cardElement);
-// });
-
-
-
-// GET_CARDS_RESPONS.forEach(function(card) {
-//     let cardTpl = `<div>${card.title}</div>`
-//     let cardNew = document.createElement('div');
-//     cardNew.innerHTML = cardTpl;
-//     debugger
-//     document.querySelector(`[data-column-id="${card.columnId}"]`).appendChild(cardNew);
-// });
-// GET_CARDS_RESPONSE.forEach(function(card) {
-//     let user = GET_USERS_RESPONSE.find(function(user) {
-//         return user.id === card.userId;
-//     });
-//     let cardTpl = `
-//       <div class="column__title">${card.title}</div>
-//       <div class="column__cards">${user.name}</div>
-//     `
-//     let cardNew = document.createElement('div');
-//     cardNew.innerHTML = cardTpl;
-//     debugger
-//     document.querySelector(`[data-column-id="${card.columnId}"]`).appendChild(cardNew);
-// });
-
-// GET_USERS_RESPONSE.forEach(function(i) {
-//     let sel = document.createElement('div');
-//     let tor = `<select>
-//     <option>${i.name}</option>
-//     </select>`
-//     sel.innerHTML = tor;
-// document.querySelector('.column__cards').appendChild(sel); */
 
